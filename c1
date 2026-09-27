@@ -1,8 +1,0 @@
-#include <stdio.h>
-int main ()
-{
-    printf("my name is rewan adhikari i live in kerkha\n");
-    printf("i am 17 years old");
-    return 0;
-
-}

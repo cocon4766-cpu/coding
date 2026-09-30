@@ -1,19 +1,11 @@
 import numpy as np
 
-A = np.array([
-    [1,2,3],
-    [4,5,6],
-    [7,8,9]
-])
-print("The sum of r1 is:",np.sum(A[0]))
-print("The sum of r2 is:",np.sum(A[1]))
-print("The sum of r3 is:",np.sum(A[2]))
-print("The sum of c1 is:",np.sum(A[:,0]))
-print("The sum of c2 is:",np.sum(A[:,1]))
-print("The sum of c3 is:",np.sum(A[:,2]))
-print("The mean of r1 is:",sum(A[0]/len(A[0])))
-print("The mean of r2 is:",sum(A[1]/len(A[1])))
-print("The mean of r3 is:",sum(A[2]/len(A[2])))
-print("The mean of c1 is:",sum(A[:,0]/len(A[:,0])))
-print("The mean of c2 is:",sum(A[:,1]/len(A[:,1])))
-print("The mean of c3 is:",sum(A[:,2]/len(A[:,2])))
+y_true = np.array([1,0,1,0])
+pred_A = np.array([0.9,0.1,0.7,0.2])
+pred_B = np.array([0.6,0.4,0.8,0.3])
+BCE_of_A = -np.mean(y_true*np.log(pred_A)+(1-y_true)*np.log(1-pred_A))
+print(BCE_of_A)
+BCE_of_B = -np.mean(y_true*np.log(pred_B)+(1-y_true)*np.log(1-pred_B))
+print(BCE_of_B)
+Differenc_in_A_and_B = BCE_of_B - BCE_of_A
+print(Differenc_in_A_and_B)
